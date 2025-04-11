@@ -18,5 +18,6 @@ public class BookDto {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String genre;
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)//чтобы при поиске книги по названию выводился только id, название, жанр (week 19)
     private List<AuthorDto> authors;
 }
