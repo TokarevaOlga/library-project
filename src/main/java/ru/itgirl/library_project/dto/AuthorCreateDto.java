@@ -5,15 +5,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
-public class GenreDto {
-    private Long id;
+@Data
+public class AuthorCreateDto {
     private String name;
-
-    private List<BookDto> books;
+    private String surname;
 }

@@ -1,4 +1,4 @@
-package ru.itgirl.library_project.service;
+package ru.itgirl.library_project.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -7,6 +7,7 @@ import ru.itgirl.library_project.dto.BookDto;
 import ru.itgirl.library_project.dto.GenreDto;
 import ru.itgirl.library_project.model.Genre;
 import ru.itgirl.library_project.repository.GenreRepository;
+import ru.itgirl.library_project.service.GenreService;
 
 import java.util.List;
 
