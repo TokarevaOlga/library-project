@@ -22,13 +22,16 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/book").hasRole("USER")
-                        .requestMatchers("/book/v2").hasRole("ADMIN")
-                        .requestMatchers("/books").hasRole("ADMIN")
-                        .anyRequest().authenticated()
+                                .requestMatchers("/book").hasRole("USER")
+                                .requestMatchers("/book/v2").hasRole("ADMIN")
+                                .requestMatchers("/books").hasRole("ADMIN")
+                                //.requestMatchers("/swagger-ui/**").permitAll()//потом удалить
+                        // .requestMatchers("/v3/api-docs/**", "/swagger-ui/**").permitAll()//потом удалить
+                                .anyRequest().authenticated()
 
                 )
-                .httpBasic(Customizer.withDefaults()); // включаем HTTP Basic Authentication
+                .httpBasic(Customizer.withDefaults()) // включаем HTTP Basic Authentication
+                .csrf(csrf -> csrf.disable());
 
         return http.build();
     }
