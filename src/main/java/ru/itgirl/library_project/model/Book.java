@@ -13,6 +13,7 @@ import java.util.Set;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Setter //добавила для week24
     private Long id;
 
     @Column(nullable = false)
@@ -24,6 +25,7 @@ public class Book {
     @Setter
     private Genre genre;
 
+   @Setter //добавила для week24
     @ManyToMany
     @JoinTable(
             name = "author_book",

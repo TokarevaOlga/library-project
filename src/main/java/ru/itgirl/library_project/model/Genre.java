@@ -13,6 +13,7 @@ import java.util.Set;
 public class Genre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter //добавила для week24
     private Long id;
 
     @Column(nullable = false)
